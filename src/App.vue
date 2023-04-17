@@ -1,27 +1,32 @@
 <script>
 
+import { store } from './store'
 import SiteHeader from './components/SiteHeader.vue'
 import SiteMain from './components/SiteMain.vue'
 import SiteFooter from './components/SiteFooter.vue'
+
 export default {
-  name: 'app',
   components: {
     SiteHeader,
     SiteMain,
     SiteFooter
+  },
+  data() {
+    return {
+      store
+    }
+  },
+  mounted(){
+    store.fetchCard(store.API_URL)
   }
 }
-
 </script>
 
 <template>
-
   <SiteHeader></SiteHeader>
   <SiteMain></SiteMain>
   <SiteFooter></SiteFooter>
-
 </template>
 
-<style scoped>
-
+<style lang="scss" scoped>
 </style>

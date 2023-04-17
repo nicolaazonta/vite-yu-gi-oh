@@ -1,6 +1,12 @@
 <script>
+    import { store } from '../store'
     export default {
         name: 'SiteFooter',
+        data(){
+            return{
+                store
+            }
+        }
     }
 </script>
 
