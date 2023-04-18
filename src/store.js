@@ -3,7 +3,7 @@ import axios from 'axios'
 export const store = reactive({
     searchText: "",
     loading: true,
-    card: null,
+    cards: null,
     API_URL: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=10&offset=0',
     fetchCard(url) {
         axios
@@ -11,7 +11,8 @@ export const store = reactive({
             .then(response => {
                 /* this.card_img = response.data.card_images.image_url;
                 this.card_name = response.data.name; */
-                this.card = response.data
+                this.cards = response.data.data;
+                console.log(this.cards);
                 this.loading = false;
             })
             .catch(err => {

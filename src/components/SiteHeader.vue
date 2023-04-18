@@ -18,8 +18,10 @@ import { store } from '../store'
 </template>
 
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+body{
+    background-color: rgba(16, 16, 16, 0.723);
+}
 header{
     color: gold;
     background-color: black;
